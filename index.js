@@ -38,3 +38,18 @@ function printGrDate() {
     document.querySelector('#dateTxt').innerHTML = `${dateStr}<br>${timeStr}`
 }
 
+// Controller
+function onInsertHandler(obj) {
+    if (!obj?.note) return
+
+    insertNote()
+    reset()
+}
+
+// Model
+function insertNote(obj) {
+    notes = [...notes, obj]
+    count++ 
+    renderNotes()
+}
+
